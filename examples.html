@@ -12,33 +12,44 @@
 </head>
 
 <body>
-<div id="example_slider">
+<div id="example_slider" class="yoSlider">
   <ul class="slider_tabs">
     <li><a href="#" class="slider_tab">Item one</a></li>
     <li><a href="#" class="slider_tab">Item two</a></li>
     <li><a href="#" class="slider_tab">Item three</a></li>
   </ul>
   <div class="slider_holder">
-    <div class="slider_innards">
+    <div class="slider_track">
       <div id="item_1" class="slider_item">
+        <h2>Item 1</h2>
         this is some content here about things Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
       
       </div>
       <div id="item_2" class="slider_item">
+        <h2>Item 2</h2>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
       </div>
       <div id="item_3" class="slider_item">
+        <h2>Item 3</h2>
         something else to go here
+      </div>
+       <div id="item_4" class="slider_item">
+          <h2>Item 4</h2>
+          something else to go hereasdfsdf
+      </div>
+      <div id="item_5" class="slider_item">
+        <h2>Item 5</h2>
+        something else to go here asdkhfjlasdjflasdjf
       </div>
     </div>
   </div>
-  <a href="#" class="slider_previous">&laquo; Previous</a>
-  <a href="#" class="slider_next">Next &raquo;</a>
+  <a href="javascript:void(0)" class="slider_previous">&laquo; Previous</a>
+  <a href="javascript:void(0)" class="slider_next">Next &raquo;</a>
 </div>
-
-</div>
+asdf
 <script type="text/javascript" charset="utf-8">
-  new yoSlider("example_slider");
+new yoSlider('example_slider', {slideBy: 2, useTabs:true});
+
 </script>
 </body>
 </html>

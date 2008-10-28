@@ -1,0 +1,14 @@
+.slider_holder{
+	position: relative;
+	overflow: hidden;
+}
+
+	.slider_track{
+		position: absolute;
+		
+	}
+	
+	.slider_item{
+		width: 400px;
+		float: left;
+	}
