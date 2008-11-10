@@ -12,3 +12,21 @@
 		width: 400px;
 		float: left;
 	}
+	
+.yoDropdown{
+	position: relative;
+}
+
+	.yoDropdown-activated{
+		background-color: #ff0000;
+		color: #fff;
+	}
+	
+.expanded{
+	background-color: #ff0000;
+}
+
+.highlighted{
+	background-color: #00ff00;
+	color: #0000ff;
+}

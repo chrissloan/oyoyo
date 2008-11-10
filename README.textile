@@ -1,0 +1,122 @@
+h1. Oyoyo Prototype JS Control Suite
+
+Oyoyo is a control suite using the Prototype JS library and is meant to be used by anyone who wants dead simple controls and dynamic content added to their website. Items found in this project are as is and may still contain bugs until completion. Feel free to branch this project and come up with your own controls.
+
+h2. yoSlider
+
+This little control lets you turn elements on your page into a sliding DIV or containing element for use as an image slide show or any content to slide horizontal. It also allows for the use of tabs in addition to the previous and next controls.
+
+h3. The build call and options
+
+To create the slider, use the following call to build the object inside your script tags.
+
+<pre>
+  new yoSlider(element, {options});
+</pre>
+
+h4. The options
+
+* *sliderHolderClass*: Class name for the container of the track. %{color:red}_default: slider_holder_%
+* *sliderTrackClass*: Class name for the track that holds the elements. %{color:red}_default: slider_track_%
+* *sliderElementClass*: Class name of elements that hold the content. %{color:red}_default: slider_item_%
+* *sliderNextButton*: Class name of the next link. %{color:red}_default: slider_next_%
+* *sliderPreviousButton*: Class name of the previous link. _default: slider_previous_%
+* *slideBy*: Number of elements that are visible at once. Using tabs constrains this to 1. %{color:red}_default: 1_%
+* *useTabs*: Boolean. %{color:red}_default: false_%
+* *sliderTabsClass*: Class name for tabs container, typically a unordered list element. %{color:red}_default: slider_tabs_%
+* *selectedTabClass*: Class name for current tab selected. %{color:red}_default: highlighted_%
+
+h3. HTML Setup
+
+All elements for the slider must be contained in a unique DIV with a unique ID for all parts to work.
+
+h4. The sliding DIV
+
+<pre>
+  <div class="slider_holder">
+    <div class="slider_track">
+      <div id="item_1" class="slider_item">
+        Content goes here.
+      </div>
+      <div id="item_2" class="slider_item">
+        Content goes here.
+      </div>
+      <div id="item_3" class="slider_item">
+        Content goes here.
+      </div>
+      ...
+    </div>
+  </div>
+</pre>
+
+h4. The previous/next controls
+
+<pre>
+  <a href="javascript:void(0)" class="slider_previous">&laquo; Previous</a>
+  <a href="javascript:void(0)" class="slider_next">Next &raquo;</a>
+</pre>
+
+h4. The tab setup
+
+If you need the sliding box to be controlled by tabs, use the following html to setup the tabs. The sliding area will be mandated to be constrained to slide by 1 item only if tabs are used.
+
+<pre>
+  <ul class="slider_tabs">
+    <li><a href="javascript:void(0)" class="slider_tab">Item one</a></li>
+    <li><a href="javascript:void(0)" class="slider_tab">Item two</a></li>
+    <li><a href="javascript:void(0)" class="slider_tab">Item three</a></li>
+    ...
+  </ul>
+</pre>
+
+h3. Future development
+
+* Allow for external links to jump to specific items in slider.
+
+h2. yoDropdown
+
+h2. yoExpander
+
+If you have ever had more text or objects than you want to show on the page and have always wanted to be able to hide/show with a simple call, then this is the control for that.
+
+h3. The build call and options
+
+No need for an elementID, it reacts to any DOM elements on the page with a specific class name.
+
+<pre>
+  new yoExpand({options});
+</pre>
+
+h4. The options
+
+* *togglerClass*: Class name for the link toggler to hide/show element. %{color:red}_default: yoExpander_%
+* *expandedClass*: Class name for the link toggler if items are visible. %{color:red}_default: expanded_%
+* *hiddenElementClass*: Class name for the elements to be hidden/shown on click of toggler. %{color:red}_default: hidden_element_%
+* *hideText*: Text that shows in toggler if element is currently shown. %{color:red}_default: show less_%
+* *method*: Method that the hidden element is shown. Options include: *blind*, *slide*, and *fade* %{color:red}_default: null_%
+* *duration*: Integer. Time in seconds it takes to show/hide element. %{color:red}_default: 1_%
+* *initiallyHide*: Boolean. Do you want the element to be initially hiden? %{color:red}_default: true_%
+
+h3. HTML Setup
+
+<pre>
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit
+  <div class="hidden_text">
+    This is hidden text here.
+  </div>
+  <a href="javascript:void(0)" class="yoExpander">show more</a>
+</pre>
+
+Please note, if using the method *slide*, you will need to include an extra div inside the container of the hidden element. This is due to the DOM object having something to push down structure wise. For example:
+
+<pre>
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit
+  <div class="hidden_text">
+    <div>
+      This is hidden text here.
+  </div>
+  </div>
+  <a href="javascript:void(0)" class="yoExpander">show more</a>
+</pre>
+
+h2. yoTabIt
