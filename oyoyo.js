@@ -330,62 +330,12 @@ var yoTabIt = Class.create({
 		
 		this.tabs = this.el.childElements();
 		
-		this.tabs.each(function(item, index){
-			
-			var togglerInitialText = item.innerHTML;
-			var hidden_element = this.hidden_elements[index];
-			
-			item.observe('click', function(event, index){
-				var toggler = event.target;
-				this.activate(toggler, hidden_element, togglerInitialText);
-      }.bindAsEventListener(this,index));	
-			
-		}.bind(this));
 		
 	},
 	
-	activate: function(toggler, hidden_element, togglerInitialText){
+	activate: function(){
 		
-		if(hidden_element.getStyle("display") == "none"){
-			switch (this.options.method){
-				case "blind":
-					Effect.BlindDown(hidden_element, {duration: this.options.duration});
-					break;
-					
-				case "slide":
-					Effect.SlideDown(hidden_element, {duration: this.options.duration});
-					break;
-					
-				case "fade":
-					Effect.Appear(hidden_element, {duration: this.options.duration});
-					break;
-						
-				default:
-					hidden_element.show();
-					
-			}
-			toggler.addClassName(this.options.expandedClass);
-			toggler.update(this.options.hideText);
-		}else{
-			switch (this.options.method){
-				case "blind":
-					Effect.BlindUp(hidden_element, {duration: this.options.duration});
-					break;
-					
-				case "slide":
-					Effect.SlideUp(hidden_element, {duration: this.options.duration});
-					break;
-					
-				case "fade":
-					Effect.Fade(hidden_element, {duration: this.options.duration});
-					break;
-					
-				default:
-					hidden_element.hide();
-			}
-			toggler.update(togglerInitialText);
-			toggler.removeClassName(this.options.expandedClass);
-		}
+		
 		
 	}
 	
