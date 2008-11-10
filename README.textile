@@ -69,6 +69,27 @@ If you need the sliding box to be controlled by tabs, use the following html to 
   </ul>
 </pre>
 
+h4. CSS
+
+There is no need to set the height of the sliding track as it is dynamically calculated based on the tallest item that it holds. The width of the slider_item class is up to you, but must be set.
+
+<pre>
+.slider_holder{
+	position: relative;
+	overflow: hidden;
+}
+
+	.slider_track{
+		position: absolute;
+
+	}
+
+	.slider_item{
+		width: 400px;
+		float: left;
+	}
+</pre>
+
 h3. Future development
 
 * Allow for external links to jump to specific items in slider.
